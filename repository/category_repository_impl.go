@@ -62,12 +62,12 @@ func (repository *CategoryRepositoryImpl) FindAll(ctx context.Context, tx *sql.T
 	rows, err := tx.QueryContext(ctx, SQL)
 	helper.PanicIfError(err)
 
-	var cateogries []domain.Category
+	var categories []domain.Category
 	for rows.Next() {
 		category := domain.Category{}
 		err := rows.Scan(&category.Id, &category.Name)
 		helper.PanicIfError(err)
-		cateogries = append(cateogries, category)
+		categories = append(categories, category)
 	}
-	return cateogries
+	return categories
 }

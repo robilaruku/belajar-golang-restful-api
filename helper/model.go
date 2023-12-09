@@ -13,11 +13,11 @@ func ToCategoryResponse(category domain.Category) web.CategoryResponse {
 }
 
 func ToCategoryResponses(categories []domain.Category) []web.CategoryResponse  {
-	var cateogiresResponses []web.CategoryResponse
+	var categoriesResponses []web.CategoryResponse
 	
 	for _, cateogry := range categories {
-		cateogiresResponses = append(cateogiresResponses, ToCategoryResponse(cateogry))
+		categoriesResponses = append(categoriesResponses, ToCategoryResponse(cateogry))
 	}
 
-	return cateogiresResponses
+	return categoriesResponses
 }

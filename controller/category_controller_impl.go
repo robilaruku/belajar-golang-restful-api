@@ -21,6 +21,7 @@ func NewCategoryController(categoryService service.CategoryService) CategoryCont
 	}
 }
 
+
 func (controller *CategoryControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
 	categoryCreateRequest := web.CategoryCreateRequest{}
 	helper.ReadFromRequestBody(request, &categoryCreateRequest)
